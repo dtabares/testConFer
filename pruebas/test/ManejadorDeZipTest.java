@@ -1,3 +1,4 @@
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -37,5 +38,21 @@ public class ManejadorDeZipTest {
         else{
             manejadorDeZip.openZipFile("Pone tu path al archivo aca amigacho");
         }
+    }
+
+    @Test
+    public void cuandoLePidoLaInfoDeUnaEntryValidaMeLaDebeDar(){
+        ManejadorDeZip manejadorDeZip = new ManejadorDeZip();
+        if (System.getProperty("os.name").equals("Linux")){
+            manejadorDeZip.openZipFile("/projects/aydoo/testConFer/pruebas/resources/recorridos-2010.zip");
+        }
+        else{
+            manejadorDeZip.openZipFile("Pone tu path al archivo aca amigacho");
+        }
+
+        String text = manejadorDeZip.getEntryContent(manejadorDeZip.getEntry("recorridos-2010a.csv"));
+
+        System.out.println(text);
+
     }
 }
