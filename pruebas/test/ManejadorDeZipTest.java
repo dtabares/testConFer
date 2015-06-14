@@ -11,7 +11,7 @@ import java.io.IOException;
 public class ManejadorDeZipTest {
 
     @Test
-    public void cuandoAbroElContenidoDelZipDeRecorridos2010LaCantidadDeARchivosContenidosDebeSer4(){
+    public void cuandoAbroElContenidoDelZipDeRecorridos2010LaCantidadDeARchivosContenidosDebeSer2(){
         ManejadorDeZip manejadorDeZip = new ManejadorDeZip();
 
         if (System.getProperty("os.name").equals("Linux")){
