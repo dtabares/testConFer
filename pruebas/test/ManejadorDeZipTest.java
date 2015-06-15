@@ -15,6 +15,7 @@ import java.util.Scanner;
 public class ManejadorDeZipTest {
 	
 	static String path;
+
 	
 	@BeforeClass
 	public static void setearConfiguracionDeSO(){
@@ -28,6 +29,7 @@ public class ManejadorDeZipTest {
 		else{
 			
 			path = "C:\\GitProjects\\RepositorioDeArchivos\\bicicletas-publicas.zip";
+
         }
 		
 		
@@ -42,7 +44,7 @@ public class ManejadorDeZipTest {
         Assert.assertEquals(manejadorDeZip.getNumberOfElements(),4);
     
     }
-
+    
     @Test
     public void cuandoElPathApuntaAUnDirectorioInexistenteDebeLanzarUnaExcepcion(){
         ManejadorDeZip manejadorDeZip = new ManejadorDeZip();
