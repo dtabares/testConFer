@@ -11,10 +11,11 @@ import java.util.Scanner;
 /**
  * Created by dtabar on 6/14/15.
  */
+
 public class ManejadorDeZipTest {
 	
-<<<<<<< HEAD
 	static String path;
+
 	
 	@BeforeClass
 	public static void setearConfiguracionDeSO(){
@@ -22,31 +23,17 @@ public class ManejadorDeZipTest {
 		if (System.getProperty("os.name").equals("Linux")){
 
 			path = "/projects/aydoo/testConFer/pruebas/resources/recorridos-2010.zip";
-=======
-	private String path;
-	
-	@BeforeClass
-	public void setearConfiguracionDeSO(){
-        
-		if (System.getProperty("os.name").equals("Linux")){
-			
-           this.path="/projects/aydoo/testConFer/pruebas/resources/recorridos-2010.zip";
->>>>>>> a0a73931234c01bd080a3c2b42153540ad117dcb
         
 		}
         
 		else{
 			
-<<<<<<< HEAD
 			path = "C:\\GitProjects\\RepositorioDeArchivos\\bicicletas-publicas.zip";
-=======
-			this.path="C:\\GitProjects\\RepositorioDeArchivos\\bicicletas-publicas.zip";
->>>>>>> a0a73931234c01bd080a3c2b42153540ad117dcb
+
         }
 		
 		
 	}
-<<<<<<< HEAD
 	
     @Test
     public void cuandoAbroElContenidoDelZipDeRecorridos2010LaCantidadDeARchivosContenidosDebeSer4(){
@@ -56,17 +43,8 @@ public class ManejadorDeZipTest {
         
         Assert.assertEquals(manejadorDeZip.getNumberOfElements(),4);
     
-=======
-
-    @Test
-    public void cuandoAbroElContenidoDelZipDeRecorridos2010LaCantidadDeARchivosContenidosDebeSer2(){
-        ManejadorDeZip manejadorDeZip = new ManejadorDeZip();
-        manejadorDeZip.openZipFile(path);
-        
-        Assert.assertEquals(manejadorDeZip.getNumberOfElements(),4);
->>>>>>> a0a73931234c01bd080a3c2b42153540ad117dcb
     }
-
+    
     @Test
     public void cuandoElPathApuntaAUnDirectorioInexistenteDebeLanzarUnaExcepcion(){
         ManejadorDeZip manejadorDeZip = new ManejadorDeZip();
