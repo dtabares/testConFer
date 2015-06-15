@@ -14,9 +14,8 @@ public class EstacionTest {
 		Assert.assertEquals(3, estacion1.getEstacionId());
 		Assert.assertEquals("RETIRO", estacion1.getEstacionNombre());
 		
-		System.out.println(estacion1.getcLat());
-		Assert.assertEquals(-34.592308, estacion1.getcLat());
-		Assert.assertEquals(-58.37501, estacion1.getcLong());
+		Assert.assertTrue(estacion1.getcLat()==-34.592308);
+		Assert.assertTrue(estacion1.getcLong()==-58.37501);
 		
 		
 	}

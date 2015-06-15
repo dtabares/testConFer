@@ -11,33 +11,36 @@ import java.util.Scanner;
 /**
  * Created by dtabar on 6/14/15.
  */
+
 public class ManejadorDeZipTest {
 	
-	private String path;
+	static String path;
 	
 	@BeforeClass
-	public void setearConfiguracionDeSO(){
+	public static void setearConfiguracionDeSO(){
         
 		if (System.getProperty("os.name").equals("Linux")){
-			
-           this.path="/projects/aydoo/testConFer/pruebas/resources/recorridos-2010.zip";
+
+			path = "/projects/aydoo/testConFer/pruebas/resources/recorridos-2010.zip";
         
 		}
         
 		else{
 			
-			this.path="C:\\GitProjects\\RepositorioDeArchivos\\bicicletas-publicas.zip";
+			path = "C:\\GitProjects\\RepositorioDeArchivos\\bicicletas-publicas.zip";
         }
 		
 		
 	}
-
+	
     @Test
-    public void cuandoAbroElContenidoDelZipDeRecorridos2010LaCantidadDeARchivosContenidosDebeSer2(){
-        ManejadorDeZip manejadorDeZip = new ManejadorDeZip();
+    public void cuandoAbroElContenidoDelZipDeRecorridos2010LaCantidadDeARchivosContenidosDebeSer4(){
+       
+    	ManejadorDeZip manejadorDeZip = new ManejadorDeZip();
         manejadorDeZip.openZipFile(path);
         
         Assert.assertEquals(manejadorDeZip.getNumberOfElements(),4);
+    
     }
 
     @Test
