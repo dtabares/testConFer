@@ -4,6 +4,8 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Scanner;
 
 
 /**
@@ -22,7 +24,7 @@ public class ManejadorDeZipTest {
             manejadorDeZip.openZipFile("C:\\GitProjects\\RepositorioDeArchivos\\bicicletas-publicas.zip");
         }
 
-        Assert.assertEquals(manejadorDeZip.getNumberOfElements(),2);
+        Assert.assertEquals(manejadorDeZip.getNumberOfElements(),4);
     }
 
     @Test
@@ -52,7 +54,16 @@ public class ManejadorDeZipTest {
 
         String text = manejadorDeZip.getEntryContent(manejadorDeZip.getEntry("recorridos-2010a.csv"));
 
-        System.out.println(text);
+        //System.out.println(text);
+        //System.out.println(Arrays.toString(text.split(";")));
+
+        Scanner scanner = new Scanner(text);
+        while (scanner.hasNextLine()) {
+            //Leo Linea a Linea
+            String line = scanner.nextLine();
+            //Lo spliteo, aca en vez de imprimirlo, lo recorremos y le vamos dando el valor a nuestros objetos
+            System.out.println(Arrays.toString(line.split(";")));
+        }
 
     }
 }
