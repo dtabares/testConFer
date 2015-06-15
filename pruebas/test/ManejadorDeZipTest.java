@@ -12,18 +12,17 @@ import java.io.IOException;
 public class ManejadorDeZipTest {
 
     @Test
-    public void cuandoAbroElContenidoDelZipDeRecorridos2010LaCantidadDeARchivosContenidosDebeSer4(){
+    public void cuandoAbroElContenidoDelZipDeRecorridos2010LaCantidadDeARchivosContenidosDebeSer2(){
         ManejadorDeZip manejadorDeZip = new ManejadorDeZip();
 
-        System.out.println(System.getProperty("os.name"));
         if (System.getProperty("os.name").equals("Linux")){
             manejadorDeZip.openZipFile("/projects/aydoo/testConFer/pruebas/resources/recorridos-2010.zip");
         }
         else{
-            manejadorDeZip.openZipFile("Pone tu path al archivo aca amigacho");
+            manejadorDeZip.openZipFile("C:\\GitProjects\\RepositorioDeArchivos\\bicicletas-publicas.zip");
         }
 
-        Assert.assertEquals(manejadorDeZip.getNumberOfElements(),4);
+        Assert.assertEquals(manejadorDeZip.getNumberOfElements(),2);
     }
 
     @Test
@@ -36,9 +35,10 @@ public class ManejadorDeZipTest {
             manejadorDeZip.openZipFile("/projects/aydoo/testConFer/pruebas/resource/recorridos-2010.zip");
         }
         else{
-            manejadorDeZip.openZipFile("Pone tu path al archivo aca amigacho");
+            manejadorDeZip.openZipFile("C:\\GitProjects\\RepositorioDeArchivos\\bicicletas-publicas.zip");
         }
     }
+
 
     @Test
     public void cuandoLePidoLaInfoDeUnaEntryValidaMeLaDebeDar(){
