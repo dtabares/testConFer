@@ -11,12 +11,12 @@ public class GeneradorDeEstadisticasTest {
 	
 	/*
 	 * Formato de salida 
-	 * El resultado del procesamiento será un archivo en formato YAML (ejemplo de archivo YAML, no es necesario usar ninguna librería, 
-	 * el formato es muy simple) con la siguiente información:
+	 * El resultado del procesamiento sera un archivo en formato YAML (ejemplo de archivo YAML, no es necesario usar ninguna libreria,
+	 * el formato es muy simple) con la siguiente informacion:
 	 * 
-	 * bicicleta utilizada más veces
+	 * bicicleta utilizada mas veces
 	 * bicicleta utilizada menos veces
-	 * recorrido más veces realizado (par origen-destino)
+	 * recorrido mas veces realizado (par origen-destino)
 	 * tiempo promedio de uso
 	 * 
 	 * Ejemplo de archivo de salida:
