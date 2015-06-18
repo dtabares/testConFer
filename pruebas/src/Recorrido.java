@@ -38,6 +38,21 @@ public class Recorrido {
 		this.tiempouso = tiempouso;
 
     }
+    
+	private GregorianCalendar convertDateStringToGregorianCalendar(String origenfecha){
+		//2010-12-30 19:39:03
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date date = null;
+		try {
+			date = df.parse(origenfecha);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		GregorianCalendar cal = new GregorianCalendar();
+		cal.setTime(date);
+		return cal;
+	}
+
 
     // Getters & Setters
 
@@ -91,21 +106,6 @@ public class Recorrido {
 
 	public String getTiempouso() {
 		return tiempouso;
-	}
-
-	private GregorianCalendar convertDateStringToGregorianCalendar(String origenfecha){
-		//2010-12-30 19:39:03
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		Date date = null;
-		try {
-			date = df.parse(origenfecha);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		GregorianCalendar cal = new GregorianCalendar();
-		cal.setTime(date);
-		System.out.println(cal.toString());
-		return cal;
 	}
 
 }
