@@ -16,7 +16,7 @@ public class ManejadorDeZip {
     public void openZipFile(String path){
 
         try {
-            zip = new ZipFile(path);
+            this.zip = new ZipFile(path);
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -24,7 +24,7 @@ public class ManejadorDeZip {
     }
 
     public int getNumberOfElements(){
-        int numberOfElements = zip.size();
+        int numberOfElements = this.zip.size();
         return  numberOfElements;
     }
 
@@ -32,7 +32,7 @@ public class ManejadorDeZip {
         String text = null;
         InputStream inputStream = null;
         try {
-            inputStream =  zip.getInputStream(entry);
+            inputStream =  this.zip.getInputStream(entry);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -48,15 +48,15 @@ public class ManejadorDeZip {
     }
 
     public ZipFile getZip(){
-        return zip;
+        return this.zip;
     }
 
     public Enumeration getEntries(){
 
-        return zip.entries();
+        return this.zip.entries();
     }
 
     public ZipEntry getEntry(String nombre){
-        return zip.getEntry(nombre);
+        return this.zip.getEntry(nombre);
     }
 }

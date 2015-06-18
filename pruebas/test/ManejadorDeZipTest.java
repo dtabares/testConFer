@@ -28,7 +28,7 @@ public class ManejadorDeZipTest {
         
 		else{
 			
-			path = "C:\\GitProjects\\RepositorioDeArchivos\\bicicletas-publicas.zip";
+			path = "C:\\GitProjects\\RepositorioDeArchivos\\recorridos-2010.zip";
 
         }
 		
@@ -47,11 +47,23 @@ public class ManejadorDeZipTest {
     
     @Test
     public void cuandoElPathApuntaAUnDirectorioInexistenteDebeLanzarUnaExcepcion(){
+        String path2;
+        if (System.getProperty("os.name").equals("Linux")){
+
+            path2 = "/projects/aydo/testConFer/pruebas/resources/recorridos-2010.zip";
+
+        }
+
+        else{
+
+            path2 = "C:\\GitProject\\RepositorioDeArchivos\\recorridos-2010.zip";
+
+        }
+
         ManejadorDeZip manejadorDeZip = new ManejadorDeZip();
         ExpectedException exception = ExpectedException.none();
-
         exception.expect(IOException.class);
-        manejadorDeZip.openZipFile(path);
+        manejadorDeZip.openZipFile(path2);
     }
 
 
@@ -70,7 +82,7 @@ public class ManejadorDeZipTest {
             //Leo Linea a Linea
             String line = scanner.nextLine();
             //Lo spliteo, aca en vez de imprimirlo, lo recorremos y le vamos dando el valor a nuestros objetos
-            System.out.println(Arrays.toString(line.split(";")));
+            //System.out.println(Arrays.toString(line.split(";")));
         }
 
     }
